@@ -5,8 +5,8 @@ import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = ({ products, bannerData }) => (
 
-    <>
-      <HeroBanner />
+    <div>
+      <HeroBanner heroBanner = {bannerData.length && bannerData[0]} />
 
 
       <div className='products-heading'>
@@ -16,12 +16,12 @@ const Home = ({ products, bannerData }) => (
 
 
       <div className='products-container'>
-        {['Product 1', 'Product 2'].map((product) => product)}
+        {products?.map((product) => product.name)}
       </div>
 
 
       <FooterBanner />
-    </>
+    </div>
   );
   
   export const getServerSideProps = async () => {
