@@ -1,11 +1,12 @@
 import React from 'react'
 
+import { client } from '../lib/client'
 import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = () => {
   return (
     <>
-      HeroBanner 
+      <HeroBanner />
 
 
       <div className='products-heading'>
@@ -19,7 +20,7 @@ const Home = () => {
       </div>
 
 
-      Footer
+      <FooterBanner />
     </>
   )
 }
