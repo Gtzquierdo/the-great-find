@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { FaEtsy } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footer-container'>
+      <p>
+        2022 The Great Find All Rights reserved.
+      </p>
+      <p className='icons'>
+        <FaEtsy />
+      </p>
+    </div>
   )
 }
 
