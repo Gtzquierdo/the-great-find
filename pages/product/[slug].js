@@ -4,12 +4,12 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 import { Product } from '../../components';
 
 import { client, urlFor } from '../../lib/client';
-// import { useStateContext } from '../../context/StateContext';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ products, product}) => {
 
     const [index, setIndex] = useState(0);
-    // const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+    const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
     const handleBuyNow = () => {
         onAdd(product, qty);
@@ -55,10 +55,10 @@ const ProductDetails = ({ products, product}) => {
                     <div className='quantity'>
                         <h3>Quantity:</h3>
                         <p className='quantity-desc'>
-                            <span className='minus' onClick=''><AiOutlineMinus />
+                            <span className='minus' onClick={decQty}><AiOutlineMinus />
                             </span>
-                            <span className='num' onClick=''>0</span>
-                            <span className='plus' onClick=''><AiOutlinePlus /></span>
+                            <span className='num'>{qty}</span>
+                            <span className='plus' onClick={incQty}><AiOutlinePlus /></span>
                         </p>
                     </div>
                     <div className='buttons'>
