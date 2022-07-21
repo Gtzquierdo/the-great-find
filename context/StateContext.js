@@ -47,9 +47,14 @@ export const StateContext = ({ children }) => {
         index = cartItems.findIndex((product) => product._id === id);
 
         if (value === 'inc') {
-            setCartItems([...cartItems, {...product, quantity: product.quantity + 1}]);
+            setCartItems([...cartItems, {...foundProduct, quantity: foundProduct.quantity + 1}]);
+            setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+            setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
         } else if (value === 'dec') {
+            if (foundProduct.quantity > 1) {
             setCartItems([...cartItems, {...product, quantity: product.quantity - 1}]);
+            setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+            setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
         }
     } 
 
