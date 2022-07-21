@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='footer-container'>
       <p>
-        2022 The Great Find All Rights reserved.
+        2022 The Great Find All Rights Reserved.
       </p>
       <p className='icons'>
         <FaEtsy />
