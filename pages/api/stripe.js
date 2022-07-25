@@ -1,4 +1,6 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import Stripe from 'stripe';
+
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -17,7 +19,7 @@ export default async function handler(req, res) {
           const newImage = img
             .replace(
               "image-",
-              "https://cdn.sanity.io/images/vfxfwnaw/production/"
+              "https://cdn.sanity.io/images/gr0vopf7/production/"
             )
             .replace("-webp", ".webp");
 
