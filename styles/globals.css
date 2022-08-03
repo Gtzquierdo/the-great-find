@@ -34,6 +34,7 @@ a {
   justify-content: space-between;
   margin: 6px 18px;
   position: relative;
+  background-color: #1d5888;
 }
 
 .marquee-text {
@@ -78,7 +79,7 @@ span.text-red {
 }
 
 .logo {
-  color: gray;
+  color: #ff993b;
   font-size: 18px;
 
 }
